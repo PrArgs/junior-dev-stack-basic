@@ -1,115 +1,470 @@
-/* Custom CSS for the Git&nbsp;+&nbsp;GitHub, Jira & Slack tutorial website */
+/* JuniorZ101-inspired stylesheet - Bright & Playful Theme */
 
-/* Base typography and colors */
-body {
+/* Import Raleway font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap');
+
+/* CSS Variables for easy theming */
+:root {
+  --bg-light: #d6e6f2;
+  --bg-lighter: #e8f1f8;
+  --bg-white: #ffffff;
+  --bg-card: #ffffff;
+  --text-dark: #2d3748;
+  --text-muted: #4a5568;
+  --accent-yellow: #f5a623;
+  --accent-orange: #ff9500;
+  --accent-blue: #4a90d9;
+  --link-color: #2b6cb0;
+  --link-hover: #1a4971;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --max-width: 1200px;
+}
+
+/* Reset and base styles */
+* {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #606c71;
-  line-height: 1.5;
-  background-color: #ffffff;
+  box-sizing: border-box;
 }
 
-a {
-  color: #1e6bb8;
-  text-decoration: none;
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  background-image:
+    radial-gradient(ellipse at top left, rgba(245, 166, 35, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(74, 144, 217, 0.1) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
 a:hover {
+  color: var(--link-hover);
   text-decoration: underline;
 }
 
-/* Page header with gradient background */
+/* Page Header */
 .page-header {
-  color: #fff;
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-lighter) 100%);
+  padding: 3rem 2rem 4rem;
   text-align: center;
-  background-image: linear-gradient(120deg, #155799, #159957);
-  padding: 4rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative stars/scribbles in header */
+.page-header::before {
+  content: '✦';
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  font-size: 2rem;
+  color: var(--accent-yellow);
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.page-header::after {
+  content: '✧';
+  position: absolute;
+  bottom: 25%;
+  left: 10%;
+  font-size: 1.5rem;
+  color: var(--accent-orange);
+  animation: twinkle 2.5s ease-in-out infinite 0.5s;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+/* Site Logo (JuniorZ logo at top of tutorial pages) */
+.site-logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 8px rgba(245, 166, 35, 0.3));
+}
+
+/* Tool Logo (Git, Jira, Slack logos) */
+.tool-logo {
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Inline Logo (JuniorZ logo inside headline text) */
+.inline-logo {
+  height: 1.8em;
+  width: auto;
+  vertical-align: middle;
+  margin: 0 0.1em;
+  filter: drop-shadow(0 2px 6px rgba(245, 166, 35, 0.3));
 }
 
 .project-name {
-  margin-top: 0;
-  margin-bottom: 0.1rem;
   font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+/* Yellow underline scribble effect */
+.project-name::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 8px;
+  background: var(--accent-yellow);
+  border-radius: 4px;
+  opacity: 0.8;
 }
 
 .project-tagline {
-  font-weight: normal;
-  opacity: 0.8;
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
-/* Main content area */
+/* Main Content Area */
 .main-content {
-  max-width: 960px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem 1rem;
-  word-wrap: break-word;
+  padding: 3rem 2rem;
 }
 
-.main-content h1,
-.main-content h2,
-.main-content h3,
-.main-content h4 {
-  color: #159957;
+/* Headings with yellow accent */
+.main-content h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
   margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.main-content h1::before {
+  content: '✦';
+  position: absolute;
+  top: -10px;
+  left: -25px;
+  font-size: 1rem;
+  color: var(--accent-yellow);
+}
+
+.main-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
-  font-weight: normal;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--accent-yellow);
+  display: inline-block;
 }
 
-.main-content p {
-  margin-bottom: 1rem;
+.main-content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
 }
 
-.main-content ul,
-.main-content ol {
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-}
-
-/* Code styling */
-pre {
-  background-color: #f3f6fa;
-  border: 1px solid #dce6f0;
-  border-radius: 0.3rem;
-  padding: 0.8rem;
-  overflow-x: auto;
-}
-
-code {
-  background-color: #f3f6fa;
-  border: 1px solid #dce6f0;
-  border-radius: 0.3rem;
-  padding: 0.2rem 0.4rem;
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 0.9rem;
-  color: #567482;
-}
-
-/* Navigation list on the homepage */
-.section-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.section-list li {
+.main-content h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
-.section-list a {
-  font-weight: bold;
+/* Paragraphs */
+.main-content p {
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  font-size: 1.1rem;
 }
 
-/* Footer styling */
-.site-footer {
-  border-top: 1px solid #eff0f1;
-  padding: 2rem 1rem;
+/* Lists */
+.main-content ul,
+.main-content ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  color: var(--text-muted);
+}
+
+.main-content li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.main-content li::marker {
+  color: var(--accent-orange);
+}
+
+/* Section List (Navigation on homepage) */
+.section-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
   margin-top: 2rem;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #819198;
 }
 
-.site-footer a {
-  color: #1e6bb8;
+.section-list li {
+  background: var(--bg-white);
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Yellow accent line on cards */
+.section-list li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--accent-yellow);
+  border-radius: 16px 0 0 16px;
+}
+
+.section-list li:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-yellow);
+  box-shadow: 0 8px 25px rgba(245, 166, 35, 0.2);
+}
+
+/* Card Logo (logos inside section list cards) */
+.card-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Card text content wrapper */
+.card-content {
+  flex: 1;
+}
+
+.card-content a {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.card-description {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+  display: block;
+}
+
+.section-list li:hover a,
+.card-content a:hover {
+  color: var(--accent-orange);
+}
+
+/* Decorative star after link */
+.card-content a::after {
+  content: ' ✦';
+  font-size: 0.8rem;
+  color: var(--accent-yellow);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.section-list li:hover .card-content a::after {
+  opacity: 1;
+}
+
+/* Code Styling */
+pre {
+  background: var(--bg-white);
+  border: 2px solid var(--border-color);
+  border-left: 4px solid var(--accent-yellow);
+  border-radius: 8px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow);
+}
+
+code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.9rem;
+  color: var(--accent-blue);
+}
+
+pre code {
+  color: var(--text-dark);
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+:not(pre) > code {
+  background: rgba(245, 166, 35, 0.15);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  color: var(--text-dark);
+}
+
+/* Strong/Bold text */
+strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 3px solid var(--accent-yellow);
+  padding: 2rem;
+  margin-top: 4rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  background: var(--bg-lighter);
+}
+
+/* Back to home link styling */
+.main-content p a[href="index.html"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent-yellow);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3);
+}
+
+.main-content p a[href="index.html"]:hover {
+  background: var(--accent-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 149, 0, 0.4);
+  text-decoration: none;
+}
+
+/* Resource links section */
+.main-content ul:last-of-type a {
+  color: var(--accent-blue);
+}
+
+.main-content ul:last-of-type a:hover {
+  color: var(--link-hover);
+}
+
+/* Decorative elements - scattered stars */
+.main-content h1:first-of-type::after {
+  content: '✧';
+  position: absolute;
+  top: -5px;
+  right: -20px;
+  font-size: 0.9rem;
+  color: var(--accent-orange);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-name {
+    font-size: 1.75rem;
+  }
+
+  .project-tagline {
+    font-size: 1rem;
+  }
+
+  .page-header {
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .page-header::before,
+  .page-header::after {
+    font-size: 1.2rem;
+  }
+
+  .main-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .main-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .main-content h1::before {
+    display: none;
+  }
+
+  .main-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .section-list li {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .site-logo {
+    max-width: 150px;
+  }
+}
+
+/* Smooth animations */
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  .section-list li {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Extra decorative scribble lines */
+.main-content h2::after {
+  content: '〰';
+  margin-left: 10px;
+  color: var(--accent-yellow);
+  font-size: 1.2rem;
 }
