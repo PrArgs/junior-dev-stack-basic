@@ -11,107 +11,354 @@
     <img src="images/logo.png" alt="JuniorZ Logo" class="site-logo" />
     <img src="images/git_logo.png" alt="Git Logo" class="tool-logo" />
     <h1 class="project-name">Git &amp; GitHub</h1>
-    <p class="project-tagline">Version control and collaboration</p>
+    <p class="project-tagline">Practical Guide for Team Collaboration</p>
   </header>
   <main class="main-content">
-    <h1>What are Git and GitHub?</h1>
+    <h1>How to Work with Git + GitHub</h1>
     <p>
-      <strong>Git</strong> is a distributed version‑control system that records
-      snapshots of your code over time. You work in a local copy of your
-      repository, stage changes with <code>git add</code> and record a snapshot (a
-      <em>commit</em>) with <code>git commit</code>. Git also lets you branch and
-      merge your project history.
+      This guide is not meant to turn you into a Git expert. It's meant to make you
+      <strong>productive and safe</strong> when working with a real team on a real codebase.
     </p>
     <p>
-      <strong>GitHub</strong> is a cloud platform that hosts Git repositories and
-      adds collaboration features. GitHub’s <em>pull‑request</em> workflow helps
-      teams propose, review and merge changes. The official “Hello World” guide
-      teaches how to create a repository, create a branch, commit changes and
-      open a pull request【778979557977785†L166-L175】.
+      There are often many ways to accomplish the same task in Git. Choose the approach that works
+      best for you. While it's best to know how to work with Git on the command line, starting with
+      a friendly UI like <strong>GitHub Desktop</strong> can be a good option to start and better
+      understand the right flows, then later move to the command line.
+    </p>
+    <p class="tip-box">
+      If you remember only one idea, remember this: <strong>Git is the "save system" for software teams</strong>,
+      and GitHub is the place where those saved changes become visible, reviewable, testable, and mergeable
+      by the team. Your job isn't only to write code — it's to write code in a way that the team can
+      <strong>trust</strong>, <strong>review</strong>, and <strong>integrate</strong> without drama.
     </p>
 
-    <h2>GitHub’s pull‑request workflow</h2>
-    <p>GitHub’s quick‑start guide outlines these steps:</p>
-    <ol>
-      <li>
-        <strong>Create a repository</strong> – A repository is like a project
-        folder where you store files. When creating a new repository you can
-        include a README file and choose whether it is public or private【778979557977785†L185-L199】.
-      </li>
-      <li>
-        <strong>Create a branch</strong> – Branching lets you work on new
-        features independently of the main code. You can create additional
-        branches off of <code>main</code> and later merge them back【778979557977785†L224-L233】.
-      </li>
-      <li>
-        <strong>Make and commit changes</strong> – Edit files and then save
-        your changes as a commit. GitHub displays your changes and asks you to
-        write a commit message explaining what you did【778979557977785†L274-L289】.
-      </li>
-      <li>
-        <strong>Open a pull request (PR)</strong> – A PR proposes your
-        changes to others, shows the differences between branches and allows for
-        discussion and reviews【778979557977785†L291-L306】. When the PR is ready,
-        you can merge it into <code>main</code>【778979557977785†L309-L325】.
-      </li>
-    </ol>
+    <!-- Section 1: Git Concepts -->
+    <h2>1) Git Concepts (Mental Model)</h2>
+    <p>It helps to have one simple picture in your head:</p>
 
-    <h2>Git basics: staging, committing and remotes</h2>
+    <p class="flow-diagram">
+      <strong>Remote repo (GitHub)</strong> → you clone it → <strong>local repo (your machine)</strong><br><br>
+      Then you work like this:<br><br>
+      <strong>branch</strong> → [edit → stage → commit] × repeat → merge locally → push → <strong>Pull Request</strong> → review → merge PR
+    </p>
+
+    <p>That's it. Everything else is variations of this loop.</p>
+
+    <img src="images/git_page/work_like_this.png" alt="Git Clone Flow Diagram" class="content-image" />
+
+    <h3>Repo: Local vs Remote</h3>
     <p>
-      Git stores changes in a three‑stage process: the working directory, the
-      <em>staging area</em> and the commit history. You stage changes with
-      <code>git add</code> and commit them with <code>git commit</code>. The commit
-      message should explain the changes【67246901121458†L626-L689】. To
-      collaborate, you define <em>remote</em> repositories; when you clone from
-      GitHub, the remote is called <code>origin</code>. You can list remotes with
-      <code>git remote -v</code> and add new ones with
-      <code>git remote add &lt;name&gt; &lt;url&gt;</code>【906919906535863†L205-L224】.
+      A <strong>repository (repo)</strong> is your project folder plus its entire history of changes.
+      You always have two "copies" of the repo in your workflow:
     </p>
-
-    <h2>Hands‑on example</h2>
-    <p>
-      Below is a simple sequence of commands you can run in a terminal to create
-      a new Git repository, add a file and commit it. Try these steps in a
-      practice directory on your own machine.
-    </p>
-    <pre><code># Create a new folder and initialize a Git repository
-mkdir demo_repo
-cd demo_repo
-git init
-
-# Create a README file
-echo "Hello Git!" &gt; README.md
-
-# Stage and commit the file
-git add README.md
-git commit -m "Initial commit"
-
-# View the commit history
-git log --oneline
-    </code></pre>
-
-    <h2>Further resources</h2>
     <ul>
-      <li>
-        <a href="https://docs.github.com/en/get-started/start-your-journey/hello-world"
-          >GitHub Docs – Hello World tutorial</a
-        >【778979557977785†L166-L175】
-      </li>
-      <li>
-        <a href="https://git-scm.com/book/en/v2" target="_blank"
-          >Pro&nbsp;Git book</a
-        > – comprehensive coverage of Git concepts【67246901121458†L626-L689】
-      </li>
-      <li>
-        <a href="https://learngitbranching.js.org/" target="_blank"
-          >Learn Git Branching</a
-        > – interactive exercises for exploring branches【780613595577623†L185-L194】
-      </li>
-      <li>
-        <a href="https://github.com/skills" target="_blank"
-          >GitHub Skills courses</a
-        > – free, hands‑on courses hosted on GitHub【780613595577623†L185-L194】
-      </li>
+      <li>Your <strong>local repo</strong>, which is your private working space on your laptop</li>
+      <li>The <strong>remote repo</strong>, usually called <code>origin</code>, which lives on GitHub and is shared with the team</li>
+    </ul>
+    <p>When people say "push to GitHub", they mean "send my local commits to the remote repo".</p>
+
+    <h3>Commit History: The Timeline of the Project</h3>
+    <p>
+      Git doesn't store "versions of files" like Google Docs. It stores a <strong>history of changes</strong>
+      as a chain of commits. A <strong>commit</strong> is a snapshot of work with a message that explains
+      what changed and why. Over time, the project becomes a story made of commits.
+    </p>
+    <p>
+      This matters because when something breaks, you don't want to guess. You want to know
+      <em>exactly when</em> it broke and <em>what changed</em> right before it.
+    </p>
+
+    <h3>Branch: Your Private Lane of Work</h3>
+    <p>
+      A <strong>branch</strong> is the safest way to work on a feature without disturbing the stable
+      code everyone else depends on.
+    </p>
+    <p>
+      Think of <code>main</code> as "the shared highway" and your branch as "your lane". You build
+      your feature in your lane, and when it's ready, you merge it back through a Pull Request.
+    </p>
+
+    <h3>Working Directory vs Staging</h3>
+    <p>Git separates changes into two layers:</p>
+    <ul>
+      <li><strong>Working directory</strong>: files you edited (your work-in-progress)</li>
+      <li><strong>Staging area</strong>: files you selected to include in the next commit (your next "save point")</li>
+    </ul>
+    <p>Staging exists so you can control <em>what exactly</em> goes into the commit. That makes commits clean and reviewable.</p>
+
+    <h3>Pull Request (PR): How Teamwork Actually Happens</h3>
+    <p>A Pull Request is not just a button you click at the end. It's a workflow tool. A PR is where:</p>
+    <ul>
+      <li>Your change becomes visible to the team</li>
+      <li>Tests/CI can run automatically (if the repo has it)</li>
+      <li>Feedback can happen before anything touches <code>main</code></li>
+      <li>Your work is approved by the right people</li>
+    </ul>
+    <p>The PR is usually reviewed by:</p>
+    <ul>
+      <li>The <strong>team lead</strong> (to ensure quality, architecture, and consistency)</li>
+      <li><strong>Coworkers working on related code</strong> (to catch mistakes and coordinate behavior)</li>
+    </ul>
+    <p>The goal of review is not to "judge" you. It's to prevent the entire team from wasting time later.</p>
+
+    <!-- Section 2: Core Commands -->
+    <h2>2) The Core Commands (Minimal Set)</h2>
+    <p>You don't need 50 commands. You need a small set that you can execute confidently. If you master these, you can contribute to almost any team project.</p>
+
+    <h3><code>git clone</code></h3>
+    <p>This is how you get the project onto your machine for the first time.</p>
+    <pre><code>git clone https://github.com/org/project.git</code></pre>
+
+    <h3><code>git status</code></h3>
+    <p>This is your dashboard. Use it constantly. It tells you what you changed and what's staged.</p>
+    <pre><code>git status</code></pre>
+
+    <h3><code>git checkout -b &lt;branch&gt;</code></h3>
+    <p>This creates a new branch and moves you into it. You do this before you start a task.</p>
+    <pre><code>git checkout -b feature/login-ui
+# OR
+git switch -c feature/login-ui</code></pre>
+
+    <h3><code>git add</code></h3>
+    <p>This moves changes into the staging area (meaning: "this goes into my next commit").</p>
+    <pre><code>git add .
+# OR stage a single file:
+git add src/app.js</code></pre>
+
+    <h3><code>git commit -m</code></h3>
+    <p>This creates a save point with a message.</p>
+    <pre><code>git commit -m "Add login form validation"</code></pre>
+
+    <h3><code>git push -u origin &lt;branch&gt;</code></h3>
+    <p>This uploads your branch to GitHub so the team can see it (and so you can open a PR).</p>
+    <pre><code>git push -u origin feature/login-ui</code></pre>
+
+    <h3><code>git pull --rebase</code></h3>
+    <p>This pulls new commits from the remote and places your commits on top, keeping history clean.</p>
+    <pre><code>git pull --rebase</code></pre>
+
+    <h3><code>git log --oneline</code></h3>
+    <p>This shows commit history quickly. It helps you understand what happened recently.</p>
+    <pre><code>git log --oneline</code></pre>
+
+    <h3><code>git diff</code></h3>
+    <p>This shows what changed before you commit. It prevents accidental junk commits.</p>
+    <pre><code>git diff</code></pre>
+
+    <p class="tip-box">
+      Remember: almost all of these commands can also be executed via GUI tools like <strong>GitHub Desktop</strong>.
+    </p>
+
+    <!-- Section 3: Real Workflow -->
+    <h2>3) The Real Workflow (What You Do Every Time)</h2>
+    <p>
+      Think of this as your daily operating system for Git. The goal isn't perfection — it's consistency.
+      When everyone follows the same flow, you avoid most Git pain and keep <code>main</code> stable for the whole team.
+    </p>
+
+    <p>You almost always begin the same way: <strong>sync the branch you're branching from</strong>, so you don't build on stale code.</p>
+    <pre><code>git checkout main
+git pull --rebase</code></pre>
+
+    <p>Now create a dedicated branch for your task:</p>
+    <pre><code>git checkout -b feature/&lt;short-name&gt;</code></pre>
+
+    <p class="tip-box">
+      <strong>Make many local commits while working — like pressing "Save" in Word.</strong><br><br>
+      A commit is not "the final version." It's a checkpoint. Frequent commits protect you from losing progress,
+      make debugging easier ("what changed right before it broke?"), and make code review smoother because
+      your changes are a clear sequence instead of one huge dump.
+    </p>
+
+    <p>A good rhythm is simple: finish one meaningful step → commit → continue.</p>
+    <pre><code>git status
+git diff
+git add .
+git commit -m "Add login form validation"</code></pre>
+
+    <p>When you're ready to share your work, push the branch to GitHub and open a Pull Request:</p>
+    <pre><code>git push -u origin feature/&lt;short-name&gt;</code></pre>
+
+    <p>
+      A PR is where your code becomes teamwork: it gets reviewed, tested, and merged in a controlled way.
+      A PR typically needs approval from the <strong>team lead</strong> (quality/architecture) and teammates
+      working in the same area. Treat review as collaboration: respond to comments, improve the code,
+      push updates, and keep the PR focused until it's ready to merge.
+    </p>
+
+    <p class="tip-box">
+      <strong>Branch from the branch you want to merge into</strong> (your "parent branch").<br><br>
+      If your work should merge into <code>main</code>, branch from <code>main</code>.
+      If your work is part of an existing feature branch, branch from that feature branch instead.
+    </p>
+
+    <pre><code>git checkout feature/payments
+git pull --rebase
+git checkout -b bugfix/payments-null-check</code></pre>
+
+    <!-- YouTube Video Section -->
+    <h2>Watch: Understanding Pull Requests</h2>
+    <p>
+      <strong>Please watch this short video</strong> to understand what is expected when creating a PR.
+      It will also discuss briefly what we have covered and will be covering, so it will be a good intuition and reference:
+    </p>
+
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/nCKdihvneS0?rel=0"
+        title="Understanding Pull Requests"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Section 4: Branching Best Practices -->
+    <h2>4) Branching Best Practices (How Teams Stay Sane)</h2>
+    <p>Branching rules exist for one reason: <strong>coordination</strong>. On a team, chaos is expensive.</p>
+
+    <p>A good branch is:</p>
+    <ul>
+      <li>Narrow in scope</li>
+      <li>Easy to understand</li>
+      <li>Easy to review</li>
+      <li>Easy to revert if needed</li>
+    </ul>
+
+    <p>That's why the default behavior is "one branch per task".</p>
+
+    <h3>Branch Naming</h3>
+    <p>
+      Branch naming doesn't need to be perfect, but it must be predictable. A branch name should tell
+      reviewers what it is without opening the PR.
+    </p>
+    <ul>
+      <li><code>feature/login-ui</code></li>
+      <li><code>bugfix/null-check-orders</code></li>
+      <li><code>hotfix/prod-crash</code></li>
+    </ul>
+
+    <p class="tip-box">
+      <strong>Avoid working directly on <code>main</code>.</strong><br>
+      Even if you're "just changing one small thing". The one small thing is exactly how teams break <code>main</code>.
+    </p>
+
+    <!-- Section 5: Before Opening a PR -->
+    <h2>5) Before Opening a PR</h2>
+    <p>
+      If you open a PR too early with incomplete work, the team lead and reviewers waste time reviewing
+      something that isn't ready. If you open a PR too late with a huge change, reviewers waste time
+      reviewing a monster.
+    </p>
+    <p>
+      The goal is simple: open a PR when it is <strong>coherent</strong>, <strong>testable</strong>,
+      and <strong>small enough to review</strong>.
+    </p>
+
+    <div class="checklist-box">
+      <h4>PR Ready Checklist (Do This Every Time)</h4>
+      <ul class="checklist">
+        <li>You pulled the latest changes from the parent branch (<code>main</code> or the relevant feature branch)</li>
+        <li>Conflicts are resolved locally</li>
+        <li>The project builds / runs</li>
+        <li>Relevant tests were run</li>
+        <li>No debug prints, temporary hacks, or "commented-out solutions"</li>
+        <li>Formatting/linting is acceptable (if the repo enforces it)</li>
+        <li>PR scope is focused (not multiple unrelated changes in one PR)</li>
+      </ul>
+    </div>
+
+    <!-- Section 6: When Things Go Wrong -->
+    <h2>6) When Things Go Wrong (Common Fixes)</h2>
+    <p>
+      You will eventually hit problems. That's normal. The goal isn't to avoid problems — it's to have
+      safe default fixes.
+    </p>
+    <p>
+      It's also important to understand that "things going wrong" does <strong>not</strong> mean you failed.
+      In real teams, it is completely normal to:
+    </p>
+    <ul>
+      <li>Get a <strong>push rejected</strong> because the branch moved forward</li>
+      <li>Open a PR and then be asked to <strong>fix issues</strong> after review</li>
+    </ul>
+    <p>That feedback loop is not a punishment — it's the workflow doing its job.</p>
+
+    <h3>Case 1: "My push was rejected because remote has new commits"</h3>
+    <p>This happens when your branch on GitHub has moved forward (usually because someone pushed updates, or you're behind).</p>
+    <p><strong>Safe fix:</strong></p>
+    <pre><code>git pull --rebase
+git push</code></pre>
+
+    <h3>Case 2: "I opened a PR to the wrong branch"</h3>
+    <p>This is more common than people admit. It's not a disaster.</p>
+    <p><strong>Safe fix:</strong> On GitHub, edit the PR and change the base branch to the correct parent branch.</p>
+
+    <h3>Case 3: "Reviewers requested changes and now I need to fix things"</h3>
+    <p>This is one of the most common situations in professional development. Once a PR is open, your job is simple: treat review comments like a to-do list.</p>
+    <ol>
+      <li>Go back to your <strong>local feature branch</strong></li>
+      <li>Fix the issues <strong>one by one</strong></li>
+      <li>Re-test whatever is relevant</li>
+      <li>Commit your fixes (small, clean commits are ideal)</li>
+      <li>Push the updates to the remote branch</li>
+    </ol>
+    <p class="tip-box">
+      <strong>You do not open a new PR.</strong> Once a PR exists, pushing more commits to the same branch
+      will <strong>automatically update the PR</strong>.
+    </p>
+    <p>When you're done, communicate clearly: reply to review comments, explain what you changed, and re-request review.</p>
+
+    <h3>Case 4: "I accidentally committed to main"</h3>
+    <p>The key is: don't panic, and don't push.</p>
+    <p><strong>Safe fix:</strong></p>
+    <pre><code># Move your work into a proper feature branch
+git checkout -b feature/move-accidental-main-work
+
+# Restore main to its expected state
+git checkout main
+git pull --rebase
+
+# Push your feature branch and open a PR
+git push -u origin feature/move-accidental-main-work</code></pre>
+
+    <!-- Final Mindset -->
+    <h2>Final Mindset (How Good Teams Work)</h2>
+    <p>If you work like this consistently:</p>
+
+    <div class="do-dont-grid">
+      <div class="do-box">
+        <h4>Do</h4>
+        <ul>
+          <li>Branch before you start</li>
+          <li>Commit often as checkpoints</li>
+          <li>Keep changes small and readable</li>
+          <li>Sync with the parent branch</li>
+          <li>Open PRs that are testable and focused</li>
+          <li>Take review seriously and collaborate</li>
+        </ul>
+      </div>
+      <div class="dont-box">
+        <h4>Don't</h4>
+        <ul>
+          <li>Work directly on <code>main</code></li>
+          <li>Make one giant commit at the end</li>
+          <li>Open PRs without testing</li>
+          <li>Ignore review feedback</li>
+          <li>Fix conflicts on GitHub if avoidable</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Then Git becomes boring — and that's the goal. When Git is boring, your team moves fast.</p>
+
+    <!-- Further Resources -->
+    <h2>Further Resources</h2>
+    <ul>
+      <li><a href="https://docs.github.com/en/get-started/start-your-journey/hello-world" target="_blank">GitHub Docs – Hello World tutorial</a></li>
+      <li><a href="https://git-scm.com/book/en/v2" target="_blank">Pro Git book</a> – comprehensive coverage of Git concepts</li>
+      <li><a href="https://github.com/skills" target="_blank">GitHub Skills courses</a> – free, hands-on courses hosted on GitHub</li>
+      <li><a href="https://www.youtube.com/watch?v=T_PKBNImooA&list=PL0lo9MOBetEGWDtUgEsQoW0lgwytsZDvu" target="_blank">GitHub Tutorial for Beginners</a> – free video series</li>
     </ul>
 
     <p>
@@ -121,5 +368,38 @@ git log --oneline
   <footer class="site-footer">
     <span>© 2025 – Tutorial site for demonstration purposes.</span>
   </footer>
+
+  <script>
+    // Add copy buttons to all code blocks
+    document.addEventListener('DOMContentLoaded', function() {
+      const codeBlocks = document.querySelectorAll('pre');
+
+      codeBlocks.forEach(function(pre) {
+        const button = document.createElement('button');
+        button.className = 'copy-btn';
+        button.textContent = 'Copy';
+
+        button.addEventListener('click', function() {
+          const code = pre.querySelector('code');
+          const text = code ? code.textContent : pre.textContent;
+
+          navigator.clipboard.writeText(text).then(function() {
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+
+            setTimeout(function() {
+              button.textContent = 'Copy';
+              button.classList.remove('copied');
+            }, 2000);
+          }).catch(function(err) {
+            console.error('Failed to copy: ', err);
+            button.textContent = 'Error';
+          });
+        });
+
+        pre.appendChild(button);
+      });
+    });
+  </script>
 </body>
 </html>
