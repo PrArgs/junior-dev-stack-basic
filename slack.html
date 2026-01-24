@@ -11,90 +11,250 @@
     <img src="images/logo.png" alt="JuniorZ Logo" class="site-logo" />
     <img src="images/Slack_logo.png" alt="Slack Logo" class="tool-logo" />
     <h1 class="project-name">Slack</h1>
-    <p class="project-tagline">Communicate and collaborate effectively</p>
+    <p class="project-tagline">Professional Team Communication at Scale</p>
   </header>
   <main class="main-content">
-    <h1>What is Slack?</h1>
+    <!-- Section 1: What Slack Is -->
+    <h1>What Slack Is (and Why Teams Use It)</h1>
     <p>
-      <strong>Slack</strong> describes itself as the “operating system for work” — a
-      conversational interface that brings together people, processes and data【636834211350128†L120-L151】. Work happens in
-      <em>channels</em>, which are dedicated spaces that bring the right people
-      together【636834211350128†L130-L136】. With more than 2,600 apps in the Slack marketplace,
-      you can integrate tools such as GitHub, Jira and Google Drive【636834211350128†L141-L145】.
+      <strong>Slack</strong> is the primary communication tool used by most modern engineering teams.
+      While it may look similar to familiar messaging apps, its purpose is very different. Slack is
+      designed for structured, searchable, team-wide communication that supports ongoing work rather
+      than casual conversation.
+    </p>
+    <p>
+      Unlike personal messaging apps, Slack is built around the idea that work conversations should be
+      <strong>visible</strong>, <strong>recoverable</strong>, and <strong>connected</strong> to the tools
+      where work actually happens. Messages are not just exchanged; they are contextualized within
+      channels, projects, and integrations.
+    </p>
+    <p class="tip-box">
+      For junior developers, Slack is often the first place where professional communication habits
+      are learned—and unlearned.
     </p>
 
-    <h2>Types of conversations</h2>
+    <!-- Section 2: Slack vs WhatsApp -->
+    <h2>Slack Compared to WhatsApp (and WhatsApp Groups)</h2>
+    <p>
+      At first glance, Slack feels similar to WhatsApp: you send messages, reply to people, and receive
+      notifications. This is exactly why many juniors instinctively use Slack as if it were WhatsApp.
+      That instinct is understandable—but misleading.
+    </p>
+
+    <div class="compare-grid">
+      <div class="compare-box-secondary">
+        <h4>WhatsApp (Personal Chat)</h4>
+        <ul>
+          <li>Optimized for private, real-time conversation</li>
+          <li>Messages are chronological</li>
+          <li>Context fades quickly</li>
+          <li>Groups mix multiple topics</li>
+          <li>Works well for social coordination</li>
+          <li>Hard to reference later</li>
+        </ul>
+      </div>
+      <div class="compare-box-primary">
+        <h4>Slack (Work Communication)</h4>
+        <ul>
+          <li>Optimized for work continuity</li>
+          <li>Conversations organized in channels</li>
+          <li>Messages searchable months later</li>
+          <li>New members see historical context</li>
+          <li>Designed for asynchronous reading</li>
+          <li>Information written to be understood later</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="tip-box">
+      <strong>Mental shift:</strong> WhatsApp is about talking to people.
+      Slack is about communicating within a system.
+    </p>
+
+    <!-- Section 3: How Slack Organizes Work -->
+    <h2>How Slack Organizes Work Conversations</h2>
+    <p>
+      Slack's core strength is that conversations are not just messages—they are
+      <strong>structured discussion spaces</strong>.
+    </p>
+
+    <h3>Channels</h3>
+    <p>
+      Channels act as shared rooms with a clear purpose. Instead of asking "who should I message?",
+      you usually ask "<strong>which channel does this belong in?</strong>". This alone changes how
+      teams communicate: discussions become discoverable, decisions become visible, and information
+      stops living in private inboxes.
+    </p>
+
+    <h3>Threads</h3>
+    <p>
+      Threads further reinforce this structure. Rather than fragmenting conversations across dozens of
+      short messages, Slack allows replies to stay attached to the original message. This keeps channels
+      readable and makes it possible to follow multiple discussions in parallel without losing context.
+    </p>
+
+    <p class="flow-diagram">
+      The result is communication that is <strong>calmer</strong>, more <strong>deliberate</strong>,
+      and easier to reason about—especially when many people are involved.
+    </p>
+
+    <!-- Section 4: Slack Is Not a Task Manager -->
+    <h2>Slack Is Not a Task Manager—but It Can Track Work</h2>
+    <p>
+      Slack itself is not where tasks are formally defined, but it plays an important role in how work
+      is discussed and followed.
+    </p>
+    <p>
+      Messages can be saved, reminders can be set, and integrations allow updates from other systems to
+      appear directly in channels. In practice, this means Slack often acts as a <strong>signal layer</strong>:
+      you see that something changed, needs attention, or requires coordination.
+    </p>
+    <p class="tip-box">
+      For junior developers, the key point is to avoid treating Slack as a replacement for structured
+      task tracking. Instead, it should be understood as the place where work is <strong>coordinated
+      in real time</strong>, while the authoritative record of tasks lives elsewhere (like Jira).
+    </p>
+
+    <!-- Section 5: Slack and Jira Together -->
+    <h2>Working with Slack and Jira Together</h2>
+    <p>
+      Slack and Jira are designed to <strong>complement each other</strong> rather than compete.
+    </p>
+
+    <div class="compare-grid">
+      <div class="compare-box-primary">
+        <h4>Jira (Structured Work)</h4>
+        <ul>
+          <li>Tasks defined formally</li>
+          <li>Priorities assigned</li>
+          <li>Ownership tracked</li>
+          <li>Status recorded</li>
+          <li>The authoritative record</li>
+        </ul>
+      </div>
+      <div class="compare-box-secondary">
+        <h4>Slack (Conversational Layer)</h4>
+        <ul>
+          <li>Questions asked</li>
+          <li>Clarifications made</li>
+          <li>Coordination happens</li>
+          <li>Quick alignment between people</li>
+          <li>Real-time interaction</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      In practice, discussions often start in Slack and are then anchored in Jira. A question might be
+      asked in a channel, clarified through a short exchange, and then reflected in the relevant ticket.
+      Updates from Jira can also appear automatically in Slack, allowing teams to stay informed without
+      constantly switching tools.
+    </p>
+    <p class="tip-box">
+      For junior developers, the important skill is not mastering integrations, but understanding
+      <strong>why both tools exist</strong> and what role each one plays. Slack is where you interact
+      with people; Jira is where the work itself is recorded.
+    </p>
+
+    <!-- Section 6: Professional Communication -->
+    <h2>Professional Communication Expectations</h2>
+    <p>
+      Because Slack feels informal, it is easy to forget that it is still a <strong>professional
+      workspace</strong>. Messages are persistent, searchable, and often visible to people outside
+      your immediate team. Writing clearly, providing context, and being mindful of tone matters more
+      here than in casual messaging apps.
+    </p>
+
+    <div class="checklist-box">
+      <h4>Effective Slack Communication</h4>
+      <ul class="checklist">
+        <li>Favor complete thoughts over rapid back-and-forth</li>
+        <li>Prioritize clarity over speed</li>
+        <li>Use shared context over private side conversations</li>
+        <li>Write messages that can be understood asynchronously</li>
+        <li>Use threads to keep channels readable</li>
+        <li>React with emoji to acknowledge without adding noise</li>
+      </ul>
+    </div>
+
+    <p>
+      Over time, these habits make teams more effective and make junior developers easier to collaborate with.
+    </p>
+
+    <!-- Watch: Slack Tutorial -->
+    <h2>Watch: Slack for Beginners</h2>
+    <p>This video provides a helpful introduction to using Slack effectively:</p>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/RRxQQxiM7AA?rel=0"
+        title="Slack Tutorial for Beginners"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Section 7: Final Mental Model -->
+    <h2>Final Mental Model</h2>
+    <p>
+      If you already understand WhatsApp, Slack will feel familiar—but it should not be used the same way.
+    </p>
+    <p class="flow-diagram">
+      <strong>Slack is not just chat.</strong><br><br>
+      It is how teams think out loud together without losing track of what matters.
+    </p>
+    <p class="tip-box">
+      Once you treat it that way, the tool starts working for you instead of distracting you.
+    </p>
+
+    <!-- Further Resources -->
+    <h2>Further Resources</h2>
     <ul>
-      <li><strong>Direct messages (DMs)</strong> – Use DMs for conversations between
-        two people (up to eight). Keep them to small groups【598078870387260†L17-L27】.</li>
-      <li><strong>Public channels</strong> – Most team discussions should take place
-        in public channels so that decisions and context are visible to everyone【598078870387260†L30-L43】.</li>
-      <li><strong>Private channels</strong> – Use private channels only for
-        sensitive or confidential topics; only members of the channel can see
-        the conversation【598078870387260†L45-L52】.</li>
-      <li><strong>Team/important channels</strong> – Teams often have dedicated
-        channels where announcements must be acknowledged with an emoji【598078870387260†L58-L63】.</li>
-      <li><strong>Watercooler and feed channels</strong> – Use these for casual
-        discussion and automated messages respectively【598078870387260†L64-L70】.</li>
+      <li><a href="https://slack.com/help/articles/360059928654-What-is-Slack" target="_blank">Slack Help Center – What is Slack?</a> – overview of channels, messages and apps</li>
+      <li><a href="https://slack.com/resources/slack-101-guide" target="_blank">Slack 101 Guide</a> – rules of engagement and best practices</li>
+      <li><a href="https://www.youtube.com/watch?v=RRxQQxiM7AA" target="_blank">Slack Tutorial for Beginners (YouTube)</a></li>
+      <li><a href="https://www.youtube.com/watch?v=_RS2I2XEds4" target="_blank">8 Slack Features You Aren't Using (YouTube)</a></li>
     </ul>
 
-    <h2>Good practices</h2>
-    <ul>
-      <li><strong>Label your channels</strong> – Use a predictable naming convention such as
-        <code>brand–category–purpose</code> so team members can find information easily【598078870387260†L71-L78】.</li>
-      <li><strong>Keep your profile updated</strong> – Ensure your Slack profile (name, avatar and
-        time zone) is accurate so colleagues know who you are and when it’s appropriate to contact
-        you【598078870387260†L82-L97】.</li>
-      <li><strong>Move complex discussions to video</strong> – If a discussion requires more than
-        a few back‑and‑forth messages, hop on a quick call and document decisions in the channel
-        later【598078870387260†L97-L107】.</li>
-      <li><strong>Write in paragraphs</strong> – Avoid sending many short messages; instead, write
-        complete thoughts in a single message to reduce notification noise【598078870387260†L110-L120】.</li>
-      <li><strong>Label your conversations and use threads</strong> – Start messages with a bold
-        summary and reply in threads to keep conversations organized【598078870387260†L126-L144】.</li>
-      <li><strong>Use checkmarks to acknowledge</strong> – When a message doesn’t require a
-        response, react with a ✅ to indicate you’ve read it【598078870387260†L140-L152】.</li>
-      <li><strong>Manage your Slack time</strong> – Set expectations for response times and block
-        dedicated times to check Slack so you’re not distracted all day【598078870387260†L154-L167】.</li>
-    </ul>
-
-    <h2>Getting started with Slack</h2>
-    <ol>
-      <li><strong>Join or create a workspace</strong> – If your company already uses Slack, <a
-          href="https://slack.com/help/articles/360035692513-Join-a-workspace">join the
-          workspace</a>. Otherwise, create a new workspace and invite your team.</li>
-      <li><strong>Complete your profile</strong> – Add a profile picture, name and time zone【598078870387260†L82-L97】.</li>
-      <li><strong>Explore channels</strong> – Join the default channels (e.g., <code>#general</code>) and
-        create new channels for specific projects or teams. Use public channels whenever possible【598078870387260†L30-L43】.</li>
-      <li><strong>Send messages and threads</strong> – Start messages with a clear subject and use
-        threads to keep discussions organized【598078870387260†L126-L144】.</li>
-      <li><strong>Integrate tools</strong> – Slack’s app directory includes thousands of integrations. Connect Jira
-        and GitHub to receive notifications and automate workflows.</li>
-    </ol>
-
-    <h2>Further resources</h2>
-    <ul>
-      <li>
-        <a href="https://slack.com/help/articles/360059928654-What-is-Slack"
-          >Slack Help Center – What is Slack?</a
-        > – overview of channels, messages and apps【636834211350128†L120-L151】.
-      </li>
-      <li>
-        <a href="https://slack.com/resources/slack-101-guide" target="_blank"
-          >Slack 101 guide</a
-        > – rules of engagement and best practices for channel types and etiquette【598078870387260†L17-L78】.
-      </li>
-      <li>
-        <a href="https://www.youtube.com/watch?v=9RJZMSsH7-g" target="_blank"
-          >How to use Slack – Quick Start Guide (YouTube)</a
-        > – a short video tour of channels, messages and search.
-      </li>
-    </ul>
-
-    <p><a href="index.html">Back to Home</a></p>
+    <p>
+      <a href="index.html">Back to Home</a>
+    </p>
   </main>
   <footer class="site-footer">
     <span>© 2025 – Tutorial site for demonstration purposes.</span>
   </footer>
+
+  <script>
+    // Add copy buttons to all code blocks
+    document.addEventListener('DOMContentLoaded', function() {
+      const codeBlocks = document.querySelectorAll('pre');
+
+      codeBlocks.forEach(function(pre) {
+        const button = document.createElement('button');
+        button.className = 'copy-btn';
+        button.textContent = 'Copy';
+
+        button.addEventListener('click', function() {
+          const code = pre.querySelector('code');
+          const text = code ? code.textContent : pre.textContent;
+
+          navigator.clipboard.writeText(text).then(function() {
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+
+            setTimeout(function() {
+              button.textContent = 'Copy';
+              button.classList.remove('copied');
+            }, 2000);
+          }).catch(function(err) {
+            console.error('Failed to copy: ', err);
+            button.textContent = 'Error';
+          });
+        });
+
+        pre.appendChild(button);
+      });
+    });
+  </script>
 </body>
 </html>

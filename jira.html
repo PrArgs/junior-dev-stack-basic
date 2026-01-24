@@ -11,92 +11,296 @@
     <img src="images/logo.png" alt="JuniorZ Logo" class="site-logo" />
     <img src="images/Jira_logo.png" alt="Jira Logo" class="tool-logo" />
     <h1 class="project-name">Jira</h1>
-    <p class="project-tagline">Plan, track and organize work</p>
+    <p class="project-tagline">Working as a Team and Collaborating with Others, Not Just Writing Code</p>
   </header>
   <main class="main-content">
-    <h1>What is Jira?</h1>
+    <h1>Why Teams Use Jira (and Why You Should Care)</h1>
     <p>
-      <strong>Jira</strong> is a project‑management platform from Atlassian that
-      helps teams plan, organize and track their work. It can be used by any
-      team—from software engineers to product managers or marketers—and its
-      workflows and boards can be customized to fit your process【765263728887536†L224-L229】.
+      <strong>Jira</strong> is a work-tracking system developed by Atlassian that helps engineering teams
+      <strong>coordinate work</strong>, <strong>track progress</strong>, and <strong>communicate clearly</strong>—especially
+      when multiple developers and teams are involved.
+    </p>
+    <p>
+      For junior developers, Jira is not about "project management bureaucracy."
+      It is about answering three simple questions:
+    </p>
+    <ol>
+      <li><strong>What am I working on right now?</strong></li>
+      <li><strong>What is blocking me or others?</strong></li>
+      <li><strong>How does my work fit into the team's bigger goal?</strong></li>
+    </ol>
+    <p class="tip-box">
+      If Git/GitHub answers <em>how</em> we change code, Jira answers <em>why</em> we are changing it and <em>in what order</em>.
     </p>
 
-    <h2>Getting started: seven steps</h2>
-    <p>Atlassian’s beginner guide recommends the following steps to set up your first Jira project:</p>
-    <ol>
-      <li>
-        <strong>Create a space</strong> – Log into your Jira site and select
-        <em>Spaces → Create space</em> to start a new project【765263728887536†L242-L246】.
-      </li>
-      <li>
-        <strong>Pick a template</strong> – Jira offers Scrum, Kanban and bug‑tracking
-        templates. Choose the one that matches your team’s workflow【765263728887536†L247-L276】.
-      </li>
-      <li>
-        <strong>Set up your columns</strong> – Configure the board’s columns to
-        reflect your workflow. In team‑managed spaces you can add or rename
-        columns directly; in company‑managed spaces you adjust them in board
-        settings【765263728887536†L302-L329】.
-      </li>
-      <li>
-        <strong>Create a work item</strong> – Work items (stories, epics, bugs,
-        etc.) represent tasks. Click <em>Create</em> to add items to your backlog or
-        board【765263728887536†L335-L343】.
-      </li>
-      <li>
-        <strong>Connect your tools</strong> – Jira integrates with thousands of
-        apps. Go to <em>Apps → Find new apps</em> to install integrations like
-        GitHub, Slack or CI/CD tools【765263728887536†L348-L359】.
-      </li>
-      <li>
-        <strong>Invite your team</strong> – Once your board contains work items,
-        invite team members so they can collaborate【765263728887536†L360-L365】.
-      </li>
-      <li>
-        <strong>Move work forward</strong> – In a Scrum project, start a sprint;
-        in a Kanban project, begin moving items across columns【765263728887536†L369-L375】.
-      </li>
-    </ol>
-
-    <h2>Tips for beginners</h2>
+    <!-- Section 2: Scrum Methodology -->
+    <h2>Scrum Methodology (Very Short, Very Practical)</h2>
+    <p>Most teams use <strong>Scrum</strong>, an agile framework built around short iterations called <strong>sprints</strong> (usually 1–2 weeks).</p>
+    <p>At a high level:</p>
     <ul>
-      <li>
-        <strong>Use templates</strong> – Scrum templates support time‑boxed
-        sprints; Kanban templates support continuous flow; bug‑tracking
-        templates provide a simple list view【765263728887536†L247-L276】.
-      </li>
-      <li>
-        <strong>Team‑managed vs. company‑managed</strong> – Team‑managed
-        spaces let individual teams control settings, while
-        company‑managed spaces are centrally administered and good for
-        standardized workflows【765263728887536†L286-L296】.
-      </li>
-      <li>
-        <strong>Integrations</strong> – Connect Jira to GitHub or Slack to
-        automate tasks (e.g., linking pull requests to issues or sending
-        notifications)【765263728887536†L348-L359】.
-      </li>
+      <li>Work is broken into <strong>tickets</strong></li>
+      <li>Tickets are planned into a <strong>sprint</strong></li>
+      <li>The team commits to finishing those tickets</li>
+      <li>Progress is reviewed and adjusted continuously</li>
+    </ul>
+    <p>Jira acts as the <strong>single shared source of truth</strong> for this process:</p>
+    <ul>
+      <li>What is planned</li>
+      <li>What is in progress</li>
+      <li>What is done</li>
+      <li>What is blocked</li>
+    </ul>
+    <p class="tip-box">
+      For juniors: You are <strong>not expected to run Scrum</strong>.
+      You <em>are expected</em> to understand how your tickets move through it.
+    </p>
+
+    <h3>Watch: Understanding Scrum</h3>
+    <p>This video provides a good overview of the Scrum methodology:</p>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/s3y95I79D_Q?rel=0"
+        title="Understanding Scrum"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Section 3: Core Jira Concepts -->
+    <h2>Core Jira Concepts You Must Know</h2>
+
+    <h3>Ticket (Issue)</h3>
+    <p>A <strong>ticket</strong> represents a unit of work.</p>
+    <p>Common types:</p>
+    <ul>
+      <li><strong>Story</strong> – a feature or functional requirement</li>
+      <li><strong>Task</strong> – concrete technical work</li>
+      <li><strong>Bug</strong> – something broken</li>
+      <li><strong>Spike</strong> – investigation / research</li>
+    </ul>
+    <p>A ticket usually includes:</p>
+    <ul>
+      <li>Title (short and clear)</li>
+      <li>Description (what + why)</li>
+      <li>Acceptance criteria (how we know it's done)</li>
+      <li>Priority</li>
+      <li>Assignee</li>
     </ul>
 
-    <h2>Further resources</h2>
+    <h3>Board</h3>
+    <p>The <strong>board</strong> visualizes work as it flows.</p>
+    <p>Typical columns:</p>
     <ul>
-      <li>
-        <a href="https://www.atlassian.com/software/jira/guides/get-started"
-          >Official Jira Getting Started Guide</a
-        > – detailed steps, screenshots and links to deeper topics【765263728887536†L224-L229】.
-      </li>
-      <li>
-        <a href="https://university.atlassian.com/student/path/832472"
-          >Atlassian University – Beginner’s Guide to Agile in Jira</a
-        >【765263728887536†L388-L390】.
-      </li>
+      <li>To Do</li>
+      <li>In Progress</li>
+      <li>Code Review</li>
+      <li>Done</li>
+    </ul>
+    <p class="tip-box">
+      Rule of thumb: If you are coding, your ticket should be <strong>In Progress</strong>.
+      If you stopped coding, update the ticket.
+    </p>
+
+    <h3>Sprint</h3>
+    <p>A <strong>sprint</strong> is a time-boxed work cycle.</p>
+    <p>As a junior:</p>
+    <ul>
+      <li>You don't decide sprint scope</li>
+      <li>You <em>do</em> own the tickets assigned to you</li>
+      <li>You <em>do</em> communicate early if something slips</li>
     </ul>
 
-    <p><a href="index.html">Back to Home</a></p>
+    <!-- Section 4: Basic Daily Use Cases -->
+    <h2>Basic Daily Use Cases (Junior-Level Expectations)</h2>
+
+    <h3>Starting Work on a Ticket</h3>
+    <p>
+      Before writing any code, the ticket should be read carefully and fully understood. This includes
+      verifying that the requirements are clear and that there is no missing information or open question
+      that could affect the implementation. If something is unclear, it should be clarified before starting work.
+    </p>
+    <p>
+      Once the task is understood, the ticket should be moved to <strong>In Progress</strong> so the board
+      accurately reflects the current state of work. Only after that should development begin.
+    </p>
+    <p>
+      A Git branch should then be created for the task, using a name that starts with the Jira ticket key.
+      For example:
+    </p>
+    <pre><code>feature/JIRA-123-add-login-validation
+bugfix/JIRA-456-fix-null-pointer</code></pre>
+    <p>
+      Following this convention allows Jira to automatically link commits and pull requests to the ticket,
+      gives reviewers immediate context, and keeps the project history traceable and easy to follow.
+    </p>
+
+    <h3>Linking Code to Jira</h3>
+    <p>Reference the Jira key (<code>JIRA-123</code>) in:</p>
+    <ul>
+      <li>Branch name</li>
+      <li>Commit message</li>
+      <li>Pull Request title</li>
+    </ul>
+    <p class="flow-diagram">
+      This creates <strong>automatic traceability</strong> between:<br><br>
+      <strong>Ticket</strong> → <strong>Branch</strong> → <strong>PR</strong> → <strong>Code</strong>
+    </p>
+
+    <h3>Watch: Jira Terms and Workflow</h3>
+    <p>This video helps you better understand Jira terms and the typical workflow:</p>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/GPOWZSxEslU?rel=0"
+        title="Jira Terms and Workflow"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Section 5: Jira vs Slack -->
+    <h2>Jira vs Slack: What Goes Where</h2>
+    <p>
+      Jira and Slack serve very different purposes, and understanding the boundary between them is
+      essential for working effectively in a team.
+    </p>
+    <div class="compare-grid">
+      <div class="compare-box-primary">
+        <h4>Jira (Permanent Record)</h4>
+        <ul>
+          <li>Work is defined and tracked</li>
+          <li>Requirements documented</li>
+          <li>Technical decisions recorded</li>
+          <li>Status changes logged</li>
+          <li>Blockers noted</li>
+          <li>Context preserved for future</li>
+        </ul>
+      </div>
+      <div class="compare-box-secondary">
+        <h4>Slack (Fast Communication)</h4>
+        <ul>
+          <li>Quick questions</li>
+          <li>Short clarifications</li>
+          <li>Coordination requests</li>
+          <li>Asking for reviews</li>
+          <li>Urgent issues</li>
+          <li>Temporary discussions</li>
+        </ul>
+      </div>
+    </div>
+    <p class="tip-box">
+      <strong>Rule of thumb:</strong> If a conversation influences the work itself or the timeline in any way,
+      it should be captured in Jira—even if it started in Slack. Slack can start the discussion, but Jira
+      is where the outcome belongs.
+    </p>
+
+    <!-- Section 6: Priorities and Blockers -->
+    <h2>Priorities, Blockers, and Professional Communication</h2>
+    <p>
+      In most teams, priorities are not arbitrary. They are set by Team Leads or Product Managers based on
+      broader considerations such as delivery timelines, dependencies between teams, and business impact.
+      As a junior developer, your responsibility is to respect the assigned priority order and focus on the
+      task you were given. It is generally not expected—and often not helpful—to switch tasks or "self-promote"
+      work unless you were explicitly asked to do so.
+    </p>
+    <p>
+      Blockers are a normal part of software development, especially early on. What matters is not avoiding
+      them, but handling them professionally and transparently.
+    </p>
+
+    <div class="checklist-box">
+      <h4>When You Are Blocked</h4>
+      <ol>
+        <li>Update the Jira ticket so the team can see that progress has stopped</li>
+        <li>Clearly explain what is blocking you, including what you have already tried</li>
+        <li>Tag the relevant person who can help resolve the issue</li>
+        <li>Mention the blocker in stand-ups if your team has them</li>
+      </ol>
+    </div>
+    <p class="tip-box">
+      The key principle is <strong>visibility</strong>. Being blocked and communicating it early is far
+      better than staying silent and missing expectations. Teams can help you only if they know there is a problem.
+    </p>
+
+    <!-- Section 7: What Juniors Are Not Expected to Do -->
+    <h2>What Juniors Are Not Expected to Do</h2>
+    <ul class="avoid-list">
+      <li>Configure Jira workflows</li>
+      <li>Create new project schemas</li>
+      <li>Manage sprint capacity</li>
+      <li>Define team-level metrics</li>
+    </ul>
+
+    <div class="checklist-box">
+      <h4>Your Focus as a Junior</h4>
+      <ul class="checklist">
+        <li>Understanding tickets</li>
+        <li>Updating status honestly</li>
+        <li>Linking code properly</li>
+        <li>Communicating clearly</li>
+      </ul>
+    </div>
+
+    <!-- Section 8: Final Mental Model -->
+    <h2>Final Mental Model</h2>
+    <p class="flow-diagram">
+      <strong>Git/GitHub</strong> = code execution<br><br>
+      <strong>Jira</strong> = work coordination<br><br>
+      <strong>Slack</strong> = real-time communication
+    </p>
+    <p class="tip-box">
+      Strong juniors are not judged only by code quality, but by how reliably others can <strong>work with them</strong>.
+    </p>
+
+    <!-- Further Resources -->
+    <h2>Further Resources</h2>
+    <ul>
+      <li><a href="https://www.atlassian.com/software/jira/guides/getting-started/introduction" target="_blank">Official Jira Getting Started Guide</a> – detailed steps, screenshots and links to deeper topics</li>
+      <li><a href="https://www.youtube.com/playlist?list=PLaD4FvsFdarRogP7SgGhTYUlw2pm2X8Er" target="_blank">Introduction to Jira (YouTube Playlist)</a></li>
+      <li><a href="https://www.youtube.com/watch?v=s3y95I79D_Q" target="_blank">The Scrum Guide: Full Course (YouTube)</a></li>
+      <li><a href="https://www.youtube.com/watch?v=GPOWZSxEslU" target="_blank">Ultimate Jira Tutorial for Beginners (YouTube)</a></li>
+    </ul>
+
+    <p>
+      <a href="index.html">Back to Home</a>
+    </p>
   </main>
   <footer class="site-footer">
     <span>© 2025 – Tutorial site for demonstration purposes.</span>
   </footer>
+
+  <script>
+    // Add copy buttons to all code blocks
+    document.addEventListener('DOMContentLoaded', function() {
+      const codeBlocks = document.querySelectorAll('pre');
+
+      codeBlocks.forEach(function(pre) {
+        const button = document.createElement('button');
+        button.className = 'copy-btn';
+        button.textContent = 'Copy';
+
+        button.addEventListener('click', function() {
+          const code = pre.querySelector('code');
+          const text = code ? code.textContent : pre.textContent;
+
+          navigator.clipboard.writeText(text).then(function() {
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+
+            setTimeout(function() {
+              button.textContent = 'Copy';
+              button.classList.remove('copied');
+            }, 2000);
+          }).catch(function(err) {
+            console.error('Failed to copy: ', err);
+            button.textContent = 'Error';
+          });
+        });
+
+        pre.appendChild(button);
+      });
+    });
+  </script>
 </body>
 </html>

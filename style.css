@@ -673,9 +673,79 @@ ul.avoid-list li::before {
 
 /* Responsive: Stack do/don't on mobile */
 @media (max-width: 600px) {
-  .do-dont-grid {
+  .do-dont-grid,
+  .compare-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Compare Grid (both boxes with checkmarks, different colors) */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.compare-box-primary,
+.compare-box-secondary {
+  background: var(--bg-white);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.compare-box-primary {
+  border-top: 4px solid var(--accent-blue);
+}
+
+.compare-box-secondary {
+  border-top: 4px solid var(--accent-orange);
+}
+
+.compare-box-primary h4 {
+  color: var(--accent-blue);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.compare-box-secondary h4 {
+  color: var(--accent-orange);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.compare-box-primary ul,
+.compare-box-secondary ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.compare-box-primary li,
+.compare-box-secondary li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.compare-box-primary li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-blue);
+  font-weight: bold;
+}
+
+.compare-box-secondary li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent-orange);
+  font-weight: bold;
 }
 
 /* Content Images (diagrams, screenshots) */
